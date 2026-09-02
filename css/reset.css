@@ -102,3 +102,6 @@ a {
     scroll-behavior: auto !important;
   }
 }
+ section{
+    margin-left: 20%;
+ }

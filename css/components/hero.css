@@ -1,0 +1,68 @@
+.hero {
+  padding-top: 180px;
+}
+
+.tag {
+  /* Alinhamento e espaçamento interno */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre a bolinha e o texto */
+  padding: 6px 16px;
+  
+  /* Cores e Bordas */
+  background-color: #f4faf6; /* Fundo verde bem claro */
+  border: 1px solid #d4eedd; /* Borda verde suave */
+  border-radius: 50px; /* Cantos totalmente arredondados */
+  
+  /* Tipografia */
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #1e4620; /* Tom de verde escuro para o texto */
+}
+
+/* Criando a bolinha verde */
+.tag .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #27a86c; /* Verde destaque da bolinha */
+  border-radius: 50%; /* Torna o elemento perfeitamente circular */
+}
+
+/* Titulo do hero */
+.hero-title {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 20px;
+}
+/* Palavra facil do titulo */
+.hero-title .detail {
+  color: #6010b6;
+}
+
+
+.textinho{
+    font-size: 1.25rem;
+    color: rgba(51, 51, 51, 0.5);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-hero{
+    font-size: 1.25rem;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    color: #f4faf6;
+    background-color: #6010b6;
+    border-color: #6329A2;
+    white-space: nowrap;
+    
+}
+
+.btn-hero:hover{
+    transform: translateY(-4px);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.575);
+    background-color: #470f83;
+    border-color: #916bbb;
+}
