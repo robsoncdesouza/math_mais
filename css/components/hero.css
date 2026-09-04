@@ -64,7 +64,6 @@
     justify-content: center;
     gap: 10px;
     margin-right: 1em;
-    
 }
 
 @media (max-width: 570px) {
@@ -76,6 +75,7 @@
 
 .btn-hero i {
     flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .btn-hero:hover{

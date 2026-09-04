@@ -68,8 +68,8 @@ header{
 /* botões: layout e cores ajustados */
 .btn{
     font-size: 1.25rem;
-    width: 161px;
-    height: 48px;
+    width: auto;
+    height: 2.5em;
     border-radius: 25px;
     padding: 10px 20px;
     transition: 0.3s;
@@ -85,6 +85,7 @@ header{
     background-color: transparent;
     border: 2px solid #6329A2;
     color: #6329A2;
+    gap: 10px;
 }
 
 .btn-filled{
