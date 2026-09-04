@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,38 +9,38 @@
 
     <link rel="stylesheet" href="form.css">
 </head>
-
 <body>
+    <div class="form-card">
 
-        <div class="form-card">
+        <h1>Seja <span>bem-vindo!</span></h1>
+        <p class="textinho">Crie uma conta para continuar.</p>
 
-            <h1>Seja <span>bem-vindo!</span></h1>
+        <form id="cadastro-form">
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            </div>
 
-            <p class="textinho">Crie uma conta para continuar.</p>
+            <br>
 
-            <form id="cadastro-form">
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+            </div>
+            <div class="campo">
+                <label for="senhaConfirmada">Confirme sua senha</label>
+                <input type="password" id="senhaConfirmada" placeholder="Digite sua senha novamente" required>
+            </div>
 
-                <div class="campo">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
-                </div>
+            <button type="submit">Criar conta</button>
+            <p id="mensagemDeErro"></p>
 
-                <div class="campo">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="Digite sua senha" required>
-                </div>
+        </form>
 
-                <button type="submit">Criar conta</button>
+        <p class="confirmar">Já tem uma conta? <a href="login.html">Entrar</a></p>
 
-                <p id="mensagemDeErro"></p>
+    </div>
 
-            </form>
-
-            <p class="confirmar">Já tem uma conta? <a href="login.html">Entrar</a></p>
-
-        </div>
-
-    <script type="module" src="cadastrar.js"></script>
-
+    <script type="module" src="scripts/cadastrar.js"></script>
 </body>
 </html>

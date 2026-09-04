@@ -21,7 +21,8 @@ body {
     padding: 3em;
     max-width: 470px;
     border-radius: 1em;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 
 h1 {

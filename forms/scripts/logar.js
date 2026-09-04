@@ -2,6 +2,13 @@ import { logar } from "./auth.js";
 
 const form = document.getElementById("login-form");
 const mensagemDeErro = document.getElementById("mensagemDeErro");
+const inputs = form.querySelectorAll("input");
+
+inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+        mensagemDeErro.innerText = "";
+});
+});
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -10,16 +17,17 @@ form.addEventListener("submit", async (event) => {
     const senha = document.getElementById("senha").value;
 
     const { data, error } = await logar(email, senha);
-
-    if (error.message == "Invalid login credentials") {
-        mensagemDeErro.innerText = "Email ou senha incorretos, tente denovo";
+    if(error)
+    {
+        if (error.message == "Invalid login credentials") {
+            mensagemDeErro.innerText = "Email ou senha incorretos, tente denovo";
+        }
+        else {
+            alert(error.message);
+            return;
+        }
     }
-    else if (error) {
-        alert(error.message);
-        return;
-    }
-
-    console.log("Login realizado!", data);
+    else console.log("Login realizado!", data);
 
     // window.location.href = "licoes.html";
 });
