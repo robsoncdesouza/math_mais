@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,56 @@
     <title>Cadastro</title>
 
     <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../css/models/bolinhas.css">
+    <link rel="stylesheet" href="../css/models/waves.css">
 </head>
 
 <body>
 
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+     <div class="bolinhas">
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+    </div>
+    <main>
         <div class="form-card">
-
+            
             <h1>Seja <span>bem-vindo!</span></h1>
-
             <p class="textinho">Crie uma conta para continuar.</p>
 
             <form id="cadastro-form">
-
                 <div class="campo">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" placeholder="Digite seu e-mail" required>
                 </div>
-
+                <br>
                 <div class="campo">
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" placeholder="Digite sua senha" required>
                 </div>
+                <div class="campo">
+                    <label for="senhaConfirmada">Confirme sua senha</label>
+                    <input type="password" id="senhaConfirmada" placeholder="Digite sua senha novamente" required>
+                </div>
 
-                <button type="submit">Criar conta</button>
-
+                <button type="submit" class="btn">Criar conta</button>
                 <p id="mensagemDeErro"></p>
-
             </form>
 
             <p class="confirmar">Já tem uma conta? <a href="login.html">Entrar</a></p>
-
         </div>
+    </main>
 
-    <script type="module" src="cadastrar.js"></script>
-
+    <script type="module" src="./cadastrar.js"></script>
 </body>
+
 </html>

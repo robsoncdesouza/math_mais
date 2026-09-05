@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Login</title>
-
     <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../css/models/bolinhas.css">
+    <link rel="stylesheet" href="../css/models/waves.css">
+    <title>Login</title>
 </head>
 
 <body>
-
+    <div class="rastros">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <main>
         <div class="form-card">
 
             <h1>Bem-vindo <span>de volta!</span></h1>
@@ -29,17 +39,19 @@
                     <input type="password" id="senha" placeholder="Digite sua senha" required>
                 </div>
 
-                <button type="submit">Entrar</button>
+                <button type="submit" class="btn-hero">Entrar</button>
 
                 <p id="mensagemDeErro"></p>
 
             </form>
 
             <p class="confirmar">Ainda não tem uma conta? <a href="cadastro.html">Criar conta</a></p>
-
         </div>
+    </main>
 
-    <script type="module" src="scripts/logar.js"></script>
+
+    <script type="module" src="./logar.js"></script>
 
 </body>
+
 </html>
