@@ -23,16 +23,17 @@ form.addEventListener("submit", async (event) => {
 
     const { data, error } = await logar(email, senha);
     if(error)
+    switch(error.message)
     {
-        if (error.message == "Invalid login credentials") {
-            mensagemDeErro.innerText = "Email ou senha incorretos, tente denovo";
-        }
-        else {
+        case ("Invalid login credentials") :
+            mensagemDeErro.innerText = "Email ou senha incorretos, tente novamente";
+            return;
+            
+        default :
             alert(error.message);
             return;
-        }
     }
     else console.log("Login realizado!", data);
     user = data;
-    // window.location.href = "licoes.html";
+    window.location.href = "../index.html";
 });

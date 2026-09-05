@@ -28,16 +28,21 @@ form.addEventListener("submit", async (event) => {
     const { data, error } = await cadastrar(email, senha);
 
     if(error)
-    {
-        if (error.message == "Invalid login credentials") {
-            mensagemDeErro.innerText = "Email ou senha incorretos, tente denovo";
-        }
-        else {
+    switch(error.message)
+    {       
+    case("User already registered"):
+        mensagemDeErro.innerText = "Esse usuário já existe";
+        return;
+
+    case("Password should be at least 6 characters."):
+        mensagemDeErro.innerText = "A senha deve ter 6 ou mais caracteres"
+        return;
+            
+        default :
             alert(error.message);
             return;
-        }
     }
-    else console.log("Cadastro realizado!", data);
 
-    // window.location.href = "licoes.html";
+    console.log("Cadastro realizado!", data);
+    window.location.href = "../index.html";
 });
