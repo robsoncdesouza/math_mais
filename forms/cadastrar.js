@@ -1,4 +1,4 @@
-import { cadastrar } from "./auth.js";
+import { cadastrar } from "../scripts/auth.js";
 
 const form = document.getElementById("cadastro-form");
 const mensagemDeErro = document.getElementById("mensagemDeErro");
