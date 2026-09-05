@@ -1,13 +1,14 @@
 .bolinhas {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .bolinha {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: -50px;
     width: 15px;
     height: 15px;
@@ -70,4 +71,97 @@
     animation-duration: 9s;
     width: 8px;
     height: 8px;
+}
+
+/* Bolinhas com rastros */
+
+.rastros {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.rastros span {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #8b5cf6;
+    animation: diagonal 6s linear infinite;
+}
+
+/* posição e velocidade de cada uma */
+.rastros span:nth-child(1) {
+    left: 5%;
+    top: 10%;
+    animation-duration: 5s;
+}
+
+.rastros span:nth-child(2) {
+    left: 25%;
+    top: 30%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.rastros span:nth-child(3) {
+    left: 45%;
+    top: 5%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.rastros span:nth-child(4) {
+    left: 65%;
+    top: 40%;
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+.rastros span:nth-child(5) {
+    left: 80%;
+    top: 15%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+.rastros span:nth-child(6) {
+    left: 15%;
+    top: 70%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.rastros span:nth-child(7) {
+    left: 70%;
+    top: 80%;
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
+
+@keyframes diagonal {
+    0% {
+        transform: translate(-100px, -100px);
+        opacity: 0;
+        box-shadow: 0 0 5px #8b5cf6;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(500px, 500px);
+        opacity: 0;
+        box-shadow:
+            -100px -100px 20px rgba(139, 92, 246, 0.4),
+            -200px -200px 30px rgba(139, 92, 246, 0.2);
+    }
 }

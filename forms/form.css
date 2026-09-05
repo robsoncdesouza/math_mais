@@ -9,17 +9,22 @@ body {
     font-family: Arial, sans-serif;
     background: #ffffff;
     color: #111111;
+}
+main{
+    position: relative;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
-
 .form-card {
+    position: relative;
     width: 100%;
     margin: 20px;
     padding: 3em;
     max-width: 470px;
+    background: #ffffff;
     border-radius: 1em;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
@@ -99,7 +104,8 @@ button {
 }
 
 button:hover {
-    background: #6d28d9;
+    background-color: #602bbc;
+    transform: translateY(-2px);
 }
 
 #mensagemDeErro {
