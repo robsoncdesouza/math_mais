@@ -43,6 +43,6 @@ form.addEventListener("submit", async (event) => {
             return;
     }
 
-    console.log("Cadastro realizado!", data);
+    sessionStorage.setItem("emailConfirmacao", email);
     window.location.href = "../index.html";
 });
