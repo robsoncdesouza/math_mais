@@ -1,56 +1,879 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math+ - Plataforma de Estudos Online</title>
-    <meta name="description" content="Math+ - Plataforma de Estudos Online">
-    <script src="js/main.js"></script>
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <title>Math+ | Matemática pode ser mais fácil</title>
+
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/components/nav.css">
-    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <header>
-        <h1 class="logo">
-            <a href="#" title="Math+ - Plataforma de Estudos Online">
-                <img src="img/logo/logo.png" alt="Math+ - Plataforma de Estudos Online">
+<body data-page="home">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <a href="index.html" class="logo">
+                <span class="logo-mark">+</span>
+                Math<span>+</span>
             </a>
-        </h1>
 
-        <div class="nav-center" aria-label="Menu principal">
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Conteúdos</a></li>
-                <li><a href="#">Quiz</a></li>
-                <li><a href="#">ODS 4</a></li>
-            </ul>
+            <nav class="nav-links">
+
+                <a href="index.html" class="nav-link active">
+                    Início
+                </a>
+
+                <a href="conteudos.html" class="nav-link">
+                    Conteúdos
+                </a>
+
+                <a href="quiz.html" class="nav-link">
+                    Quiz
+                </a>
+
+                <a href="ods4.html" class="nav-link">
+                    ODS 4
+                </a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="conteudos.html" class="btn btn-outline btn-sm">
+                    Explorar
+                </a>
+
+                <a href="quiz.html" class="btn btn-primary btn-sm">
+                    Começar Quiz
+                </a>
+
+            </div>
+
+            <button class="burger" aria-label="Abrir menu">
+                ☰
+            </button>
+
         </div>
 
-        <div class="nav-right" aria-label="Ações rápidas">
-            <ul>
-                <li><a href="#" class="btn btn-outline">Explorar </a></li>
-                <li><a href="#" class="btn btn-filled">Começar Quiz </a></li>
-            </ul>
+        <div class="mobile-menu">
+
+            <a href="index.html">Início</a>
+            <a href="conteudos.html">Conteúdos</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="ods4.html">ODS 4</a>
+
+            <a href="quiz.html" class="btn btn-primary" style="margin-top:16px;">
+                Começar Quiz
+            </a>
+
         </div>
+
     </header>
 
-    <section class="hero">
-        <div class="tag">
-            <span class="dot"></span>
-            ODS 4 — Educação de Qualidade · Agenda 2030
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-inner">
+
+                <div class="badge">
+
+                    <span class="dot"></span>
+
+                    ODS 4 — Educação de Qualidade · Agenda 2030
+
+                </div>
+
+                <h1>
+                    Matemática<br>
+                    pode ser mais
+                    <span>fácil.</span>
+                </h1>
+
+                <p class="lead">
+                    Aprenda, pratique e evolua com uma plataforma criada
+                    para tornar a matemática mais simples, interativa
+                    e acessível.
+                </p>
+
+                <div class="actions">
+
+                    <a href="conteudos.html" class="btn btn-primary btn-lg">
+                        Começar a aprender →
+                    </a>
+
+                    <a href="ods4.html" class="btn btn-outline btn-lg">
+                        ◎ Conhecer a ODS 4
+                    </a>
+
+                </div>
+
+
+                <!-- ESTATÍSTICAS -->
+
+                <div class="stats">
+
+                    <div>
+                        <div class="stat-n">4</div>
+                        <div class="stat-t">módulos</div>
+                        <div class="stat-d">de conteúdo</div>
+                    </div>
+
+                    <div>
+                        <div class="stat-n">40+</div>
+                        <div class="stat-t">questões</div>
+                        <div class="stat-d">no banco de quiz</div>
+                    </div>
+
+                    <div>
+                        <div class="stat-n">100%</div>
+                        <div class="stat-t">gratuito</div>
+                        <div class="stat-d">
+                            sem cadastro obrigatório
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider"></div>
+
+
+        <!-- ================= MÓDULOS ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="label">
+                            Módulos
+                        </span>
+
+                        <h2>
+                            Por onde você<br>
+                            quer começar?
+                        </h2>
+
+                    </div>
+
+                    <a href="conteudos.html" class="btn btn-outline btn-sm">
+                        Ver todos os conteúdos
+                    </a>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <!-- MATEMÁTICA BÁSICA -->
+
+                    <a href="aula.html" class="card">
+
+                        <div class="icon-box purple">
+                            √
+                        </div>
+
+                        <div class="card-title">
+
+                            <h3>
+                                Matemática Básica
+                            </h3>
+
+                            <span class="level">
+                                Iniciante
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Operações fundamentais, frações,
+                            decimais e resolução de problemas
+                            do cotidiano.
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>Progresso</span>
+
+                            <strong class="purple-text">
+                                65%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-line">
+                            <span style="width:65%;" class="purple-bg">
+                            </span>
+                        </div>
+
+                        <div class="card-foot">
+
+                            <span class="xp">
+                                ◇ 120 XP
+                            </span>
+
+                            <strong class="access">
+                                Acessar →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- PORCENTAGEM -->
+
+                    <a href="aula.html" class="card">
+
+                        <div class="icon-box cyan">
+                            %
+                        </div>
+
+                        <div class="card-title">
+
+                            <h3>
+                                Porcentagem
+                            </h3>
+
+                            <span class="level">
+                                Básico
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Cálculos de porcentagem aplicados
+                            a finanças pessoais, descontos,
+                            juros e aumentos.
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>Progresso</span>
+
+                            <strong class="cyan-text">
+                                30%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-line">
+                            <span style="width:30%;" class="cyan-bg">
+                            </span>
+                        </div>
+
+                        <div class="card-foot">
+
+                            <span class="xp">
+                                ◇ 150 XP
+                            </span>
+
+                            <strong class="access">
+                                Acessar →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- GEOMETRIA -->
+
+                    <a href="aula.html" class="card">
+
+                        <div class="icon-box orange">
+                            △
+                        </div>
+
+                        <div class="card-title">
+
+                            <h3>
+                                Geometria
+                            </h3>
+
+                            <span class="level">
+                                Intermediário
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Formas geométricas, cálculo de área,
+                            perímetro, volume e geometria
+                            analítica.
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>Progresso</span>
+
+                            <strong class="orange-text">
+                                10%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-line">
+                            <span style="width:10%;" class="orange-bg">
+                            </span>
+                        </div>
+
+                        <div class="card-foot">
+
+                            <span class="xp">
+                                ◇ 200 XP
+                            </span>
+
+                            <strong class="access">
+                                Acessar →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- ESTATÍSTICA -->
+
+                    <a href="aula.html" class="card">
+
+                        <div class="icon-box violet">
+                            ∑
+                        </div>
+
+                        <div class="card-title">
+
+                            <h3>
+                                Estatística
+                            </h3>
+
+                            <span class="level">
+                                Intermediário
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Média, mediana, moda, desvio padrão,
+                            gráficos e interpretação de dados.
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>Progresso</span>
+
+                            <strong class="muted-text">
+                                Não iniciado
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-line">
+                            <span style="width:0%;"></span>
+                        </div>
+
+                        <div class="card-foot">
+
+                            <span class="xp">
+                                ◇ 180 XP
+                            </span>
+
+                            <strong class="access">
+                                Acessar →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="topics-section">
+
+            <span class="label">
+                Todos os tópicos
+            </span>
+
+
+            <div class="topics">
+
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot purple-bg"></span>
+                    Adição e subtração
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot purple-bg"></span>
+                    Multiplicação e divisão
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot purple-bg"></span>
+                    Frações
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot purple-bg"></span>
+                    Decimais
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot purple-bg"></span>
+                    Potenciação
+                </a>
+
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot cyan-bg"></span>
+                    Conceito de porcentagem
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot cyan-bg"></span>
+                    Cálculo de desconto
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot cyan-bg"></span>
+                    Juros simples
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot cyan-bg"></span>
+                    Juros compostos
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot cyan-bg"></span>
+                    Aplicações financeiras
+                </a>
+
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot orange-bg"></span>
+                    Ângulos e retas
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot orange-bg"></span>
+                    Triângulos e quadriláteros
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot orange-bg"></span>
+                    Círculo
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot orange-bg"></span>
+                    Área e perímetro
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot orange-bg"></span>
+                    Volume de sólidos
+                </a>
+
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot violet-bg"></span>
+                    Média aritmética
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot violet-bg"></span>
+                    Mediana e moda
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot violet-bg"></span>
+                    Desvio padrão
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot violet-bg"></span>
+                    Gráficos e tabelas
+                </a>
+
+                <a href="aula.html" class="topic">
+                    <span class="topic-dot violet-bg"></span>
+                    Probabilidade
+                </a>
+
+            </div>
+
         </div>
 
-        <h1 class="hero-title">Matemática<br>pode ser mais <span class="detail">fácil</span></h1>
-        <p class="textinho">Aprenda, pratique e evolua com uma plataforma criada <br>para tornar a matemática mais simples, interativa <br>e acessível.</p>
-        <div class="hero-buttons">
-            <a href="#" class="btn btn-hero">Começar a aprender <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#" class="btn btn-outline"><i class="fa-solid fa-globe"></i> Conhecer a ODS 4</a>
         </div>
-    </section>
+
+        </section>
+
+
+        <div class="divider"></div>
+
+
+        <!-- ================= PROGRESSO ================= -->
+
+        <section class="section bg">
+
+            <div class="container two-col">
+
+
+                <div>
+
+                    <span class="label">
+                        Sistema de progresso
+                    </span>
+
+                    <h2>
+                        Ganhe XP a cada<br>
+                        desafio superado
+                    </h2>
+
+                    <p class="section-description">
+                        Complete missões diárias, acerte questões
+                        e suba de nível. Seu progresso é salvo
+                        automaticamente.
+                    </p>
+
+
+                    <div class="challenge-list">
+
+                        <div class="challenge">
+
+                            <div class="challenge-left">
+
+                                <span class="check done">
+                                    ✓
+                                </span>
+
+                                Desafio diário completado
+
+                            </div>
+
+                            <span class="xp">
+                                ◇ 25 XP
+                            </span>
+
+                        </div>
+
+
+                        <div class="challenge">
+
+                            <div class="challenge-left">
+
+                                <span class="check done">
+                                    ✓
+                                </span>
+
+                                Quiz Rápido — 5 questões
+
+                            </div>
+
+                            <span class="xp">
+                                ◇ 50 XP
+                            </span>
+
+                        </div>
+
+
+                        <div class="challenge">
+
+                            <div class="challenge-left">
+
+                                <span class="check">
+                                    □
+                                </span>
+
+                                Completar um módulo inteiro
+
+                            </div>
+
+                            <span class="xp">
+                                ◇ 200 XP
+                            </span>
+
+                        </div>
+
+
+                        <div class="challenge">
+
+                            <div class="challenge-left">
+
+                                <span class="check">
+                                    □
+                                </span>
+
+                                Sequência de 7 dias seguidos
+
+                            </div>
+
+                            <span class="xp">
+                                ◇ 100 XP
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NÍVEL -->
+
+                <div>
+
+                    <div class="level-box">
+
+                        <div class="level-top">
+
+                            <div>
+
+                                <small class="uppercase">
+                                    Seu nível atual
+                                </small>
+
+                                <h3 class="level-title">
+                                    Nível 7
+                                </h3>
+
+                                <p class="muted">
+                                    Explorador Matemático
+                                </p>
+
+                            </div>
+
+                            <div class="level-number">
+                                7
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-info level-progress">
+
+                            <span>
+                                XP para o Nível 8
+                            </span>
+
+                            <strong class="primary-text">
+                                725 / 1000
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-line">
+                            <span style="width:72.5%;" class="primary-bg">
+                            </span>
+                        </div>
+
+
+                        <div class="level-stats">
+
+                            <div>
+                                <strong>12</strong>
+                                <small>dias seguidos</small>
+                            </div>
+
+                            <div>
+                                <strong>48</strong>
+                                <small>questões certas</small>
+                            </div>
+
+                            <div>
+                                <strong>3</strong>
+                                <small>módulos feitos</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="next-challenge">
+
+                        <div>
+
+                            <small>
+                                Próximo desafio
+                            </small>
+
+                            <strong>
+                                Quiz de Porcentagem
+                            </strong>
+
+                        </div>
+
+                        <a href="quiz.html" class="btn btn-light-outline btn-sm">
+                            Iniciar →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="cta">
+
+                    <div>
+
+                        <h2>
+                            Pronto para começar?
+                        </h2>
+
+                        <p>
+                            Acesse todos os módulos gratuitamente
+                            e acompanhe sua evolução em tempo real.
+                        </p>
+
+                    </div>
+
+                    <div class="actions">
+
+                        <a href="conteudos.html" class="btn btn-primary btn-lg">
+                            Ver conteúdos
+                        </a>
+
+                        <a href="quiz.html" class="btn btn-outline btn-lg">
+                            Fazer quiz
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <div class="footer-logo">
+                        <span class="logo-mark">+</span>
+                        Math<span>+</span>
+                    </div>
+
+                    <p>
+                        Plataforma de educação matemática
+                        gratuita e acessível, alinhada à ODS 4
+                        da Agenda 2030 da ONU.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <p class="footer-title">
+                        Plataforma
+                    </p>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+                            Início
+                        </a>
+
+                        <a href="conteudos.html">
+                            Conteúdos
+                        </a>
+
+                        <a href="quiz.html">
+                            Quiz
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <p class="footer-title">
+                        Sobre
+                    </p>
+
+                    <div class="footer-links">
+
+                        <a href="ods4.html">
+                            ODS 4
+                        </a>
+
+                        <a href="aula.html">
+                            Aula de Matemática
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Math+
+                </span>
+
+                <span>
+                    Alinhado à ODS 4 — Educação de Qualidade
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
 
