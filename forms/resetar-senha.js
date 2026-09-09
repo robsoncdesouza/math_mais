@@ -1,7 +1,7 @@
-import { cadastrar } from "../scripts/auth.js";
+import { supabase } from "../scripts/supabase.js";
 
-const form = document.getElementById("cadastro-form");
 const mensagemDeErro = document.getElementById("mensagemDeErro");
+const form = document.getElementById("resetar-senha-form");
 const inputs = [...form.querySelectorAll("input")];
 
 inputs.forEach((input) => {
@@ -12,16 +12,15 @@ inputs.forEach((input) => {
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
-    const senhaConfirmada = document.getElementById("senhaConfirmada").value;
+    const senhaConfirmada = document.getElementById("confirmar-senha").value;
     
     if (inputs.some(input => input.value == "" | input.value == null)) {
         mensagemDeErro.innerText = "Nenhum campo pode estar vazio";
         return
     }
     if (senha != senhaConfirmada) {
-        mensagemDeErro.innerText = "Os dois campos de senha devem ser iguais";
+        mensagemDeErro.innerText = "Os dois campos devem ser iguais";
         return;
     }
     if (senha.length < 6) {
@@ -29,7 +28,11 @@ form.addEventListener("submit", async (event) => {
         return;
     }
 
-    const { data, error } = await cadastrar(email, senha);
+    const {error} = await supabase.auth.updateUser(
+        {
+            password: senha
+        }
+    );
 
     if(error)
     switch(error.message)
@@ -47,6 +50,5 @@ form.addEventListener("submit", async (event) => {
             return;
     }
 
-    sessionStorage.setItem("emailConfirmacao", email);
     window.location.href = "../index.html";
 });
