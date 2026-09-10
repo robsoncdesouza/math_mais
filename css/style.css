@@ -58,6 +58,8 @@ body {
 
     line-height: 1.6;
 
+    margin-top: 6%;
+
 }
 
 
@@ -1182,8 +1184,11 @@ a {
 
     padding-top: 40px;
 
-    margin-top: 56px;
+    margin: 56px auto 0;
 
+    width: min(1100px, calc(100% - 20px));
+
+    box-sizing: border-box;
 }
 
 
@@ -1202,6 +1207,8 @@ a {
 
     align-items: center;
 
+    justify-content: flex-start;
+
     gap: 8px;
 
     padding: 10px 0;
@@ -1209,6 +1216,8 @@ a {
     border-bottom: 1px solid var(--border);
 
     font-size: 13px;
+
+    width: 100%;
 
 }
 
@@ -2400,6 +2409,38 @@ a {
 @media (max-width: 768px) {
 
 
+    .navbar {
+
+        position: sticky;
+
+        top: 0;
+
+        left: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        max-width: none;
+
+        border-radius: 0;
+
+    }
+
+
+    .nav-inner {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        min-height: 72px;
+
+    }
+
+
     .nav-links,
     .nav-actions {
 
@@ -2411,6 +2452,76 @@ a {
     .burger {
 
         display: block;
+
+        margin-left: auto;
+
+        width: 44px;
+
+        height: 44px;
+
+        font-size: 24px;
+
+        line-height: 1;
+
+        border-radius: 50%;
+
+        border: 1px solid var(--border);
+
+        background: var(--bg);
+
+        color: var(--text);
+
+        cursor: pointer;
+
+    }
+
+
+    .mobile-menu {
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+        padding: 16px 20px;
+
+        background: var(--surface);
+
+        border-top: 1px solid var(--border);
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    }
+
+
+    .mobile-menu.open {
+
+        display: flex;
+
+    }
+
+
+    .mobile-menu a {
+
+        color: var(--text);
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        text-decoration: none;
+
+        padding: 8px 0;
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+
+    .mobile-menu a:last-child {
+
+        border-bottom: 0;
 
     }
 
