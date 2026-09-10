@@ -93,7 +93,7 @@
     animation: diagonal 6s linear infinite;
 }
 
-/* posição e velocidade de cada uma */
+
 .rastros span:nth-child(1) {
     left: 5%;
     top: 10%;
