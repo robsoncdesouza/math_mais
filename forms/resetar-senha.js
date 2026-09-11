@@ -15,7 +15,7 @@ form.addEventListener("submit", async (event) => {
     const senha = document.getElementById("senha").value;
     const senhaConfirmada = document.getElementById("confirmar-senha").value;
     
-    if (inputs.some(input => input.value == "" | input.value == null)) {
+    if (inputs.some(input => input.value == "" || input.value == null)) {
         mensagemDeErro.innerText = "Nenhum campo pode estar vazio";
         return
     }
