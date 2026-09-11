@@ -7,229 +7,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Math+ | Conteúdos</title>
-
-<link rel="stylesheet" href="css/nav.css">
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body data-page="contents">
 
 
-<header class="navbar">
-
-    <div class="container nav-inner">
-
-        <a href="index.html" class="logo">
-            <span class="logo-mark">+</span>
-            Math<span>+</span>
-        </a>
-
-        <nav class="nav-links">
-
-            <a href="index.html" class="nav-link">
-                Início
+    <header>
+        <h1 class="logo">
+            <a href="index.html" title="Math+ - Plataforma de Estudos Online">
+                <img src="img/logo/logo.png" alt="Math+ - Plataforma de Estudos Online">
             </a>
+        </h1>
 
-            <a href="conteudos.html" class="nav-link active">
-                Conteúdos
-            </a>
-
-            <a href="quiz.html" class="nav-link">
-                Quiz
-            </a>
-
-            <a href="ods4.html" class="nav-link">
-                ODS 4
-            </a>
-
-        </nav>
-
-        <div class="nav-actions">
-
-            <a href="conteudos.html"
-               class="btn btn-outline btn-sm">
-                Explorar
-            </a>
-
-            <a href="quiz.html"
-               class="btn btn-primary btn-sm">
-                Começar Quiz
-            </a>
-
+        <div class="nav-center" aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="conteudos.html">Conteúdos</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="ods4.html">ODS 4</a></li>
+            </ul>
         </div>
 
-        <button class="burger">
-            ☰
-        </button>
-
-    </div>
-
-
-    <div class="mobile-menu">
-
-        <a href="index.html">Início</a>
-        <a href="conteudos.html">Conteúdos</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="ods4.html">ODS 4</a>
-
-    </div>
-
-</header>
+        <div class="nav-right" aria-label="Ações rápidas">
+            <ul>
+                <li><a href="conteudos.html" class="btn btn-outline btn-lg">Explorar </a></li>
+                <li><a href="quiz.html" class="btn btn-filled btn-lg">Começar Quiz </a></li>
+            </ul>
+        </div>
+    </header>
 
 
-<!-- ================= CABEÇALHO ================= -->
+    <!-- ================= CABEÇALHO ================= -->
 
-<section class="page-head">
+    <section class="page-head">
 
-    <div class="container page-head-inner">
+        <div class="container page-head-inner">
 
-        <span class="label">
-            Biblioteca
-        </span>
-
-
-        <div class="section-head content-header">
-
-            <h1>
-                Conteúdos
-            </h1>
+            <span class="label">
+                Biblioteca
+            </span>
 
 
-            <div class="search">
+            <div class="section-head content-header">
 
-                <span>
-                    ⌕
-                </span>
+                <h1>
+                    Conteúdos
+                </h1>
 
-                <input
-                    type="text"
-                    id="search"
-                    placeholder="Buscar módulo..."
-                >
+
+                <div class="search">
+
+                    <span>
+                        ⌕
+                    </span>
+
+                    <input type="text" id="search" placeholder="Buscar módulo...">
+
+                </div>
+
+            </div>
+
+
+            <div class="filters">
+
+                <button class="filter active" data-filter="Todos">
+                    Todos
+                </button>
+
+                <button class="filter" data-filter="Fácil">
+                    Fácil
+                </button>
+
+                <button class="filter" data-filter="Médio">
+                    Médio
+                </button>
+
+                <button class="filter" data-filter="Difícil">
+                    Difícil
+                </button>
 
             </div>
 
         </div>
 
+    </section>
 
-        <div class="filters">
 
-            <button
-                class="filter active"
-                data-filter="Todos">
-                Todos
-            </button>
+    <!-- ================= CONTEÚDOS ================= -->
 
-            <button
-                class="filter"
-                data-filter="Fácil">
-                Fácil
-            </button>
+    <main>
 
-            <button
-                class="filter"
-                data-filter="Médio">
-                Médio
-            </button>
+        <section class="section">
 
-            <button
-                class="filter"
-                data-filter="Difícil">
-                Difícil
-            </button>
+            <div class="container">
+
+                <div class="cards" id="lista-modulos">
+
+                </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <div class="footer-logo">
+                        <span class="logo-mark">+</span>
+                        Math<span>+</span>
+                    </div>
+
+                    <p>
+                        Plataforma de educação matemática
+                        gratuita e acessível, alinhada à ODS 4
+                        da Agenda 2030 da ONU.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <p class="footer-title">
+                        Plataforma
+                    </p>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">Início</a>
+                        <a href="conteudos.html">Conteúdos</a>
+                        <a href="quiz.html">Quiz</a>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <p class="footer-title">
+                        Sobre
+                    </p>
+
+                    <div class="footer-links">
+
+                        <a href="ods4.html">ODS 4</a>
+                        <a href="aula.html">Aula de Matemática</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <span>© 2026 Math+</span>
+
+                <span>
+                    Alinhado à ODS 4 — Educação de Qualidade
+                </span>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
-
-
-<!-- ================= CONTEÚDOS ================= -->
-
-<main>
-
-<section class="section">
-
-<div class="container">
-
-<div class="cards" id="lista-modulos">
-
-</div>
-
-</main>
-
-
-<footer class="footer">
-
-<div class="container footer-inner">
-
-<div class="footer-grid">
-
-<div>
-
-<div class="footer-logo">
-<span class="logo-mark">+</span>
-Math<span>+</span>
-</div>
-
-<p>
-Plataforma de educação matemática
-gratuita e acessível, alinhada à ODS 4
-da Agenda 2030 da ONU.
-</p>
-
-</div>
-
-<div>
-
-<p class="footer-title">
-Plataforma
-</p>
-
-<div class="footer-links">
-
-<a href="index.html">Início</a>
-<a href="conteudos.html">Conteúdos</a>
-<a href="quiz.html">Quiz</a>
-
-</div>
-
-</div>
-
-<div>
-
-<p class="footer-title">
-Sobre
-</p>
-
-<div class="footer-links">
-
-<a href="ods4.html">ODS 4</a>
-<a href="aula.html">Aula de Matemática</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-<span>© 2026 Math+</span>
-
-<span>
-Alinhado à ODS 4 — Educação de Qualidade
-</span>
-
-</div>
-
-</div>
-
-</footer>
+    </footer>
     <script src="script.js"></script>
-    <script type="module" src="scripts/verificar-login.js"></script>    
+    <script type="module" src="scripts/verificar-login.js"></script>
     <script type="module" src="scripts/conteudos.js"></script>
 </body>
+
 </html>

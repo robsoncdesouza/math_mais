@@ -3,15 +3,16 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Math+ | Resultado</title>
+    <title>Math+ | Resultado</title>
 
-<link rel="stylesheet" href="css/nav.css">
-<link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -19,334 +20,283 @@ content="width=device-width, initial-scale=1.0">
 <body data-page="result">
 
 
-<header class="navbar">
+    <header>
+        <h1 class="logo">
+            <a href="index.html" title="Math+ - Plataforma de Estudos Online">
+                <img src="img/logo/logo.png" alt="Math+ - Plataforma de Estudos Online">
+            </a>
+        </h1>
 
-<div class="container nav-inner">
+        <div class="nav-center" aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="conteudos.html">Conteúdos</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="ods4.html">ODS 4</a></li>
+            </ul>
+        </div>
 
-<a href="index.html"
-class="logo">
+        <div class="nav-right" aria-label="Ações rápidas">
+            <ul>
+                <li><a href="conteudos.html" class="btn btn-outline btn-lg">Explorar </a></li>
+                <li><a href="quiz.html" class="btn btn-filled btn-lg">Começar Quiz </a></li>
+            </ul>
+        </div>
+    </header>
 
-<span class="logo-mark">
-+
-</span>
 
-Math<span>+</span>
+    <main class="result animate">
 
-</a>
 
+        <div class="result-icon" id="resulticon">
 
-<nav class="nav-links">
+            <img class="nix-final" src="img/nix_i.png" alt="">
 
-<a href="index.html"
-class="nav-link">
-Início
-</a>
+        </div>
 
-<a href="conteudos.html"
-class="nav-link">
-Conteúdos
-</a>
 
-<a href="quiz.html"
-class="nav-link active">
-Quiz
-</a>
+        <span class="label" id="grade">
 
-<a href="ods4.html"
-class="nav-link">
-ODS 4
-</a>
+            Excelente
 
-</nav>
+        </span>
 
 
-<div class="nav-actions">
+        <div class="result-score">
 
-<a href="conteudos.html"
-class="btn btn-outline btn-sm">
-Explorar
-</a>
+            <span id="pct">
+                0
+            </span>
 
-<a href="quiz.html"
-class="btn btn-primary btn-sm">
-Começar Quiz
-</a>
+            <small>
+                %
+            </small>
 
-</div>
+        </div>
 
-<button class="burger">
-☰
-</button>
 
-</div>
+        <p class="muted">
+            <span id="score">0</span>
+            de <span id="total-questions">0</span> questões corretas
+        </p>
 
-</header>
 
+        <!-- ESTATÍSTICAS -->
 
-<main class="result animate">
+        <div class="result-stats">
 
 
-<div class="result-icon"
-id="result-icon">
+            <div class="result-stat">
 
-🏆
+                <strong id="score-total">
+                    0/5
+                </strong>
 
-</div>
+                <span>
+                    Acertos
+                </span>
 
+            </div>
 
-<span
-class="label"
-id="grade">
 
-Excelente
+            <div class="result-stat">
 
-</span>
+                <strong id="pct-total">
+                    0%
+                </strong>
 
+                <span>
+                    Aproveitamento
+                </span>
 
-<div class="result-score">
+            </div>
 
-<span id="pct">
-0
-</span>
 
-<small>
-%
-</small>
+            <div class="result-stat">
 
-</div>
+                <strong id="xp">
+                    +0
+                </strong>
 
+                <span>
+                    XP ganho
+                </span>
 
-<p class="muted">
-    <span id="score">0</span>
-    de <span id="total-questions">0</span> questões corretas
-</p>
+            </div>
 
 
-<!-- ESTATÍSTICAS -->
+        </div>
 
-<div class="result-stats">
 
+        <!-- XP -->
 
-<div class="result-stat">
+        <div class="result-progress">
 
-<strong id="score-total">
-0/5
-</strong>
+            <div class="progress-info">
 
-<span>
-Acertos
-</span>
+                <span>
+                    Progresso — Nível 7
+                </span>
 
-</div>
+                <strong id="progress-text" class="primary-text">
 
+                    725 / 1000 XP
 
-<div class="result-stat">
+                </strong>
 
-<strong id="pct-total">
-0%
-</strong>
+            </div>
 
-<span>
-Aproveitamento
-</span>
 
-</div>
+            <div class="progress-line">
 
+                <span id="progress" class="primary-bg" style="width:72.5%;">
 
-<div class="result-stat">
+                </span>
 
-<strong id="xp">
-+0
-</strong>
+            </div>
 
-<span>
-XP ganho
-</span>
 
-</div>
+            <small class="muted">
+                XP adicionados nesta sessão
+            </small>
 
+        </div>
 
-</div>
 
+        <!-- FEEDBACK -->
 
-<!-- XP -->
+        <div id="notice" class="notice good">
 
-<div class="result-progress">
+            Parabéns! Você dominou Porcentagem.
+            Que tal avançar para Geometria?
 
-<div class="progress-info">
+        </div>
 
-<span>
-Progresso — Nível 7
-</span>
 
-<strong
-id="progress-text"
-class="primary-text">
+        <!-- BOTÕES -->
 
-725 / 1000 XP
+        <div class="result-actions">
 
-</strong>
 
-</div>
+            <a href="quiz.html" class="btn btn-filled btn-lg">
 
+                ↻ Tentar novamente
 
-<div class="progress-line">
+            </a>
 
-<span
-id="progress"
-class="primary-bg"
-style="width:72.5%;">
 
-</span>
+            <div class="result-secondary">
 
-</div>
+                <a class="btn btn-outline" id="rever-aula">
 
+                    ◉ Revisar aula
 
-<small class="muted">
-XP adicionados nesta sessão
-</small>
+                </a>
 
-</div>
 
+                <a href="conteudos.html" class="btn btn-outline">
 
-<!-- FEEDBACK -->
+                    ▦ Conteúdos
 
-<div
-id="notice"
-class="notice good">
+                </a>
 
-Parabéns! Você dominou Porcentagem.
-Que tal avançar para Geometria?
+            </div>
 
-</div>
+        </div>
 
 
-<!-- BOTÕES -->
+    </main>
 
-<div class="result-actions">
 
+    <footer class="footer">
 
-<a href="quiz.html"
-class="btn btn-primary btn-lg">
+        <div class="container footer-inner">
 
-↻ Tentar novamente
+            <div class="footer-grid">
 
-</a>
+                <div>
 
+                    <div class="footer-logo">
+                        <span class="logo-mark">+</span>
+                        Math<span>+</span>
+                    </div>
 
-<div class="result-secondary">
+                    <p>
+                        Plataforma de educação matemática
+                        gratuita e acessível, alinhada à ODS 4
+                        da Agenda 2030 da ONU.
+                    </p>
 
-<a class="btn btn-outline" id="rever-aula">
+                </div>
 
-◉ Revisar aula
 
-</a>
+                <div>
 
+                    <p class="footer-title">
+                        Plataforma
+                    </p>
 
-<a href="conteudos.html"
-class="btn btn-outline">
+                    <div class="footer-links">
 
-▦ Conteúdos
+                        <a href="index.html">
+                            Início
+                        </a>
 
-</a>
+                        <a href="conteudos.html">
+                            Conteúdos
+                        </a>
 
-</div>
+                        <a href="quiz.html">
+                            Quiz
+                        </a>
 
-</div>
+                    </div>
 
+                </div>
 
-</main>
 
+                <div>
 
-<footer class="footer">
+                    <p class="footer-title">
+                        Sobre
+                    </p>
 
-<div class="container footer-inner">
+                    <div class="footer-links">
 
-<div class="footer-grid">
+                        <a href="ods4.html">
+                            ODS 4
+                        </a>
 
-<div>
+                        <a href="aula.html">
+                            Aula de Matemática
+                        </a>
 
-<div class="footer-logo">
-<span class="logo-mark">+</span>
-Math<span>+</span>
-</div>
+                    </div>
 
-<p>
-Plataforma de educação matemática
-gratuita e acessível, alinhada à ODS 4
-da Agenda 2030 da ONU.
-</p>
+                </div>
 
-</div>
+            </div>
 
 
-<div>
+            <div class="footer-bottom">
 
-<p class="footer-title">
-Plataforma
-</p>
+                <span>
+                    © 2026 Math+
+                </span>
 
-<div class="footer-links">
+                <span>
+                    Alinhado à ODS 4 — Educação de Qualidade
+                </span>
 
-<a href="index.html">
-Início
-</a>
+            </div>
 
-<a href="conteudos.html">
-Conteúdos
-</a>
+        </div>
 
-<a href="quiz.html">
-Quiz
-</a>
+    </footer>
 
-</div>
 
-</div>
-
-
-<div>
-
-<p class="footer-title">
-Sobre
-</p>
-
-<div class="footer-links">
-
-<a href="ods4.html">
-ODS 4
-</a>
-
-<a href="aula.html">
-Aula de Matemática
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="footer-bottom">
-
-<span>
-© 2026 Math+
-</span>
-
-<span>
-Alinhado à ODS 4 — Educação de Qualidade
-</span>
-
-</div>
-
-</div>
-
-</footer>
-
-
-<script src="script.js"></script>
-<script type="module" src="scripts/result.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="scripts/result.js"></script>
 
 </body>
 
