@@ -5,7 +5,7 @@ async function verificarLogin() {
     const { data, error } = await supabase.auth.getUser();
 
     if (error || !data.user) {
-        window.location.href = "../forms/cadastro.html";
+        window.location.href = "./forms/cadastro.html";
         return;
     }
 
