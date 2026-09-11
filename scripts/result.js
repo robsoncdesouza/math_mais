@@ -82,6 +82,9 @@ const progress =
 const progressText =
     document.querySelector("#progress-text");
 
+const nixFinal = 
+    document.getElementById("resulticon");
+
 
 /* =========================================================
    COLOCA OS DADOS NA TELA
@@ -128,6 +131,9 @@ if (porcentagem >= 80) {
     notice.textContent =
         "Parabéns! Você foi muito bem nesse quiz.";
 
+    nixFinal.innerHTML =
+        '<img class="nix-final teste" src="img/nix_mb.png" alt="">';
+
 }
 
 else if (porcentagem >= 60) {
@@ -143,6 +149,8 @@ else if (porcentagem >= 60) {
     notice.textContent =
         "Bom resultado! Revise os pontos que errou e tente novamente.";
 
+    nixFinal.innerHTML =
+        '<img class="nix-final teste" src="img/nix_b.png" alt="">';
 }
 
 else {
@@ -157,6 +165,9 @@ else {
 
     notice.textContent =
         "Não desanime. Revise a aula e tente o quiz novamente.";
+
+    nixFinal.innerHTML =
+        '<img class="nix-final teste" src="img/nix_i.png" alt="">';
 
 }
 
@@ -202,3 +213,8 @@ progressText.textContent =
 
 progress.style.width =
     `${(xpNoNivel / 1000) * 100}%`;
+
+
+/* =========================================================
+   NIX FINAL
+========================================================= */
