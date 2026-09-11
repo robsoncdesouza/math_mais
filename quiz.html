@@ -3,14 +3,14 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Math+ | Quiz</title>
+    <title>Math+ | Quiz</title>
 
-<link rel="stylesheet" href="css/nav.css">
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -18,7 +18,7 @@ content="width=device-width, initial-scale=1.0">
 <body data-page="quiz">
 
 
-<header>
+    <header>
         <h1 class="logo">
             <a href="index.html" title="Math+ - Plataforma de Estudos Online">
                 <img src="img/logo/logo.png" alt="Math+ - Plataforma de Estudos Online">
@@ -43,192 +43,187 @@ content="width=device-width, initial-scale=1.0">
     </header>
 
 
-<!-- ================= QUIZ ================= -->
+    <!-- ================= QUIZ ================= -->
 
-<main class="quiz-wrap">
+    <main class="quiz-wrap">
 
-<div class="quiz-top">
+        <div class="quiz-top">
 
-<a href="conteudos.html"
-class="btn btn-ghost btn-sm">
+            <a href="conteudos.html" class="btn btn-ghost btn-sm">
 
-← Sair do quiz
+                ← Sair do quiz
 
-</a>
+            </a>
 
 
-<span class="xp"
-id="quiz-xp">
+            <span class="xp" id="quiz-xp">
 
-◇ 0 XP
+                ◇ 0 XP
 
-</span>
+            </span>
 
-</div>
+        </div>
 
 
-<!-- PROGRESSO -->
+        <!-- PROGRESSO -->
 
-<div class="quiz-steps">
+        <div class="quiz-steps">
 
-<span class="quiz-step current"></span>
-<span class="quiz-step"></span>
-<span class="quiz-step"></span>
-<span class="quiz-step"></span>
-<span class="quiz-step"></span>
+            <span class="quiz-step current"></span>
+            <span class="quiz-step"></span>
+            <span class="quiz-step"></span>
+            <span class="quiz-step"></span>
+            <span class="quiz-step"></span>
 
-</div>
+        </div>
 
 
-<div class="quiz-info">
+        <div class="quiz-info">
 
-<strong id="question-number">
-Questão 1 de 5
-</strong>
+            <strong id="question-number">
+                Questão 1 de 5
+            </strong>
 
-<span id="score-display">
-0 acertos
-</span>
+            <span id="score-display">
+                0 acertos
+            </span>
 
-</div>
+        </div>
 
 
-<!-- PERGUNTA -->
+        <!-- PERGUNTA -->
 
-<div class="question animate">
+        <div class="question animate">
 
-<span class="label">
-Porcentagem · Questão 1
-</span>
+            <span class="label">
+                Porcentagem · Questão 1
+            </span>
 
-<h1 id="question-text">
-Se 30% de um número é 60,
-qual é esse número?
-</h1>
+            <h1 id="question-text">
+                Se 30% de um número é 60,
+                qual é esse número?
+            </h1>
 
-</div>
+        </div>
 
 
-<!-- ALTERNATIVAS -->
+        <!-- ALTERNATIVAS -->
 
-<div class="options" id="options">
+        <div class="options" id="options">
 
-    <button class="option" data-option="0">
-        <span class="option-letter">A</span>
-    </button>
+            <button class="option" data-option="0">
+                <span class="option-letter">A</span>
+            </button>
 
-    <button class="option" data-option="1">
-        <span class="option-letter">B</span>
-    </button>
+            <button class="option" data-option="1">
+                <span class="option-letter">B</span>
+            </button>
 
-    <button class="option" data-option="2">
-        <span class="option-letter">C</span>
-    </button>
+            <button class="option" data-option="2">
+                <span class="option-letter">C</span>
+            </button>
 
-    <button class="option" data-option="3">
-        <span class="option-letter">D</span>
-    </button>
+            <button class="option" data-option="3">
+                <span class="option-letter">D</span>
+            </button>
 
-</div>
+        </div>
 
 
-<!-- FEEDBACK -->
+        <!-- FEEDBACK -->
 
-<div id="feedback"></div>
+        <div id="feedback"></div>
 
 
-<!-- CONTINUAR -->
+        <!-- CONTINUAR -->
 
-<button
-id="next-question"
-class="btn btn-primary btn-lg quiz-next"
-disabled>
+        <button id="next-question" class="btn btn-primary btn-lg quiz-next" disabled>
 
-Continuar →
+            Continuar →
 
-</button>
+        </button>
 
 
-</main>
+    </main>
 
 
-<footer class="footer">
+    <footer class="footer">
 
-<div class="container footer-inner">
+        <div class="container footer-inner">
 
-<div class="footer-grid">
+            <div class="footer-grid">
 
-<div>
+                <div>
 
-<div class="footer-logo">
-<span class="logo-mark">+</span>
-Math<span>+</span>
-</div>
+                    <div class="footer-logo">
+                        <span class="logo-mark">+</span>
+                        Math<span>+</span>
+                    </div>
 
-<p>
-Plataforma de educação matemática
-gratuita e acessível, alinhada à ODS 4
-da Agenda 2030 da ONU.
-</p>
+                    <p>
+                        Plataforma de educação matemática
+                        gratuita e acessível, alinhada à ODS 4
+                        da Agenda 2030 da ONU.
+                    </p>
 
-</div>
+                </div>
 
 
-<div>
+                <div>
 
-<p class="footer-title">
-Plataforma
-</p>
+                    <p class="footer-title">
+                        Plataforma
+                    </p>
 
-<div class="footer-links">
+                    <div class="footer-links">
 
-<a href="index.html">Início</a>
-<a href="conteudos.html">Conteúdos</a>
-<a href="quiz.html">Quiz</a>
+                        <a href="index.html">Início</a>
+                        <a href="conteudos.html">Conteúdos</a>
+                        <a href="quiz.html">Quiz</a>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
 
-<div>
+                <div>
 
-<p class="footer-title">
-Sobre
-</p>
+                    <p class="footer-title">
+                        Sobre
+                    </p>
 
-<div class="footer-links">
+                    <div class="footer-links">
 
-<a href="ods4.html">ODS 4</a>
-<a href="aula.html">Aula de Matemática</a>
+                        <a href="ods4.html">ODS 4</a>
+                        <a href="aula.html">Aula de Matemática</a>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
 
-<div class="footer-bottom">
+            <div class="footer-bottom">
 
-<span>
-© 2026 Math+
-</span>
+                <span>
+                    © 2026 Math+
+                </span>
 
-<span>
-Alinhado à ODS 4 — Educação de Qualidade
-</span>
+                <span>
+                    Alinhado à ODS 4 — Educação de Qualidade
+                </span>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</footer>
+    </footer>
 
 
-<script src="script.js"></script>
-<script type="module" src="scripts/verificar-login.js"></script> 
-<script type="module" src="scripts/quiz.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="scripts/verificar-login.js"></script>
+    <script type="module" src="scripts/quiz.js"></script>
 </body>
 
 </html>
