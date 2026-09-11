@@ -1,10 +1,18 @@
 import { supabase } from "./supabase.js";
-import { pegarModulos, pegarEtapas, pegarProgresso, pegarQuizzesModulo } from "./get.js";
+import { pegarModulos, pegarEtapas, pegarProgresso, pegarQuizzesModulo, pegarQuestoes, pegarQuestoesModulo } from "./get.js";
 
 const idUser = (await supabase.auth.getUser()).data.user.id;
 const listaModulos = document.getElementById("lista-modulos");
 const todasEtapasConcluidas = await pegarProgresso(idUser);
 const modulos = await pegarModulos();
+const questoes = (await supabase.from("questoes").select("*")).data;
+
+const qtdModulos = document.getElementById("qtd-modulos");
+qtdModulos.innerText = modulos.length;
+
+const qtdQuestoes = document.getElementById("qtd-questoes");
+qtdQuestoes.innerText = questoes.length - 10 + "+";
+
 
 let i = 0;
 for (const modulo of modulos) {
