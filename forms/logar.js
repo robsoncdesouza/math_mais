@@ -16,7 +16,7 @@ form.addEventListener("submit", async (event) => {
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
 
-    if (inputs.some(input => input.value == "" | input.value == null)) {
+    if (inputs.some(input => input.value == "" || input.value == null)) {
         mensagemDeErro.innerText = "Nenhum campo pode estar vazio";
         return;
     }
