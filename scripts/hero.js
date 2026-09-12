@@ -40,8 +40,8 @@ for (const modulo of modulos) {
     card.classList.add("card");
     card.innerHTML = `
 
-            <div class="icon-box purple">
-                √
+            <div class="icon-box ${modulo.cor}">
+                ${modulo.logo}
             </div>
 
             <div class="card-title">
@@ -64,7 +64,7 @@ for (const modulo of modulos) {
 
                 <span>Progresso</span>
 
-                <strong class="purple-text">
+                <strong class="${modulo.cor}-text">
                     ${porcentagem}%
                 </strong>
 
@@ -73,7 +73,7 @@ for (const modulo of modulos) {
             <div class="progress-line">
                 <span
                     style="width: ${porcentagem}%;"
-                    class="purple-bg">
+                    class="${modulo.cor}-bg">
                 </span>
             </div>
 

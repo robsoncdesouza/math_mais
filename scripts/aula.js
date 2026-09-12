@@ -25,7 +25,7 @@ const moduloTitulo = document.querySelector(".module-title strong");
 const progressoTexto = document.querySelector(".progress-info strong");
 const progressoBarra = document.querySelector(".progress-line span");
 
-const botaoQuiz = document.querySelector(".lesson-nav .btn-primary");
+const botaoQuiz = document.querySelector(".lesson-nav .btn-filled");
 
 
 // ========================================
@@ -65,7 +65,7 @@ moduloTitulo.textContent = modulo.titulo;
 // BREADCRUMB
 // ========================================
 
-const linksBreadcrumb = breadcrumb.querySelectorAll("span, strong");
+const linksBreadcrumb = breadcrumb.querySelectorAll("span");
 
 
 // O HTML original tem:
@@ -200,17 +200,17 @@ async function carregarEtapa(etapa) {
 
     const elementos = breadcrumb.querySelectorAll("span, strong");
 
-    if (elementos.length >= 3) {
+    if (elementos.length >= 4) {
         elementos[1].textContent = modulo.titulo;
-        elementos[2].textContent = etapa.titulo;
+        elementos[3].textContent = etapa.titulo;
     }
 
 
     // ------------------------------------
     // CONTEÚDOS
     // ------------------------------------
-
-    const conteudos = await pegarConteudos(etapa.id);
+    const quiz = await pegarQuiz(etapa.id);
+    const conteudos = await pegarConteudos(etapa.id) || [];
 
     painel.innerHTML = "";
 
@@ -229,8 +229,13 @@ async function carregarEtapa(etapa) {
             <h1>
                 ${etapa.titulo}
             </h1>
+
         </div>
-    `;
+
+        <span class="xp">
+            ◇ ${quiz.xp} XP
+        </span>
+        `;
 
     painel.appendChild(tituloAula);
 
@@ -259,7 +264,7 @@ async function carregarEtapa(etapa) {
     // QUIZ
     // ------------------------------------
 
-    const quiz = await pegarQuiz(etapa.id);
+    //const quiz = await pegarQuiz(etapa.id); na linha 212
 
 
     if (quiz) {
@@ -376,7 +381,7 @@ function criarConteudo(conteudo) {
     // ------------------------------------
 
     if (conteudo.tipo === "tabela") {
-
+        
         return criarTabela(conteudo.dados);
     }
 

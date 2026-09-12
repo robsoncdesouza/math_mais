@@ -147,7 +147,7 @@ a {
 }
 
 
-.purple-text {
+.purple-text, .violet-text {
     color: var(--primary);
 }
 
