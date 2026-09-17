@@ -6,7 +6,7 @@ header{
     transform: translateX(-50%);
     width: min(1260px, calc(100vw - 80px));
     max-width: 1260px;
-    min-width: 960px;
+    min-width: 0;
     border-radius: 15px;
     z-index: 999;
     justify-content: space-between;
@@ -18,8 +18,45 @@ header{
 }
 
 .logo img{
-    padding: 1.25rem;
+    padding: 1.5rem;
     animation: subiredescer 1.75s infinite ease-in-out;
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #6329A2;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background: #f1ebf8;
+}
+
+header.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+header.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 @keyframes subiredescer {
