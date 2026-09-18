@@ -7,6 +7,7 @@
 
     <title>Math+ | Matemática pode ser mais fácil</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/style.css">
@@ -42,6 +43,11 @@
             <ul>
                 <li><a href="conteudos.html" class="btn btn-outline btn-lg">Explorar </a></li>
                 <li><a href="forms/resetar-senha.html" class="btn btn-filled btn-lg">Mudar Senha </a></li>
+                <li>
+                    <a href="forms/login.html" class="btn btn-filled btn-icon" data-logout title="Sair da conta" aria-label="Sair da conta">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
@@ -621,6 +627,7 @@
 
     <script src="script.js"></script>
     <script type="module" src="scripts/verificar-login.js"></script>
+    <script type="module" src="scripts/logout.js"></script>
     <script type="module" src="scripts/hero.js"></script>
     <script src="scripts/menu.js"></script>
 </body>
