@@ -9,13 +9,6 @@ const parametros = new URLSearchParams(window.location.search);
 const idQuiz = parametros.get("id");
 
 
-const btnRepetir = document.getElementById("rever-aula")
-// if (!idQuiz) {
-//     btnRepetir.href = "../conteudos.html";
-// }
-// else btnRepetir.href = `../aula.html?id=${idQuiz}`
-btnRepetir.href = "../conteudos.html";
-
 const acertos =
     Number(
         localStorage.getItem("mathplusScore") || 0
@@ -84,8 +77,19 @@ const progressText =
 
 const nixFinal = 
     document.getElementById("resulticon");
+    
+const tentarBtn = document.getElementById("retry-btn");
+tentarBtn.href = `../quiz.html?id=${idQuiz}`
 
-
+const btnRepetir = document.getElementById("rever-aula")
+if (!idQuiz) 
+    btnRepetir.href = "../conteudos.html";
+else {
+    const quizz = (await supabase.from("quizzes").select("etapas(id, modulo_id)").eq("id",idQuiz).single()).data;
+    console.log(quizz);
+    
+    btnRepetir.href = `../aula.html?id=${quizz.etapas.modulo_id}&idet=${quizz.etapas.id}`;
+}
 /* =========================================================
    COLOCA OS DADOS NA TELA
 ========================================================= */
@@ -187,8 +191,8 @@ if (error) {
     console.error("Erro ao pegar XP:", error);
 }
 
-// const xpAtual = usuario?.xp || 0;
-const xpAtual = 725 + xpGanho;
+const xpAtual = usuario?.xp || 0;
+// const xpAtual = 7250 + xpGanho;
 
 /* =========================================================
    MOSTRA O PROGRESSO

@@ -41,8 +41,12 @@ form.addEventListener("submit", async (event) => {
         mensagemDeErro.innerText = "Esse usuário já existe";
         return;
 
+    case("New password should be different from the old password."):
+        mensagemDeErro.innerText = "A sua nova senha deve ser diferente da atual.";
+        return;
+
     case("Password should be at least 6 characters."):
-        mensagemDeErro.innerText = "A senha deve ter 6 ou mais caracteres"
+        mensagemDeErro.innerText = "A senha deve ter 6 ou mais caracteres";
         return;
             
         default :

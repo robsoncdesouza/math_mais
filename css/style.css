@@ -1479,33 +1479,70 @@ a {
 }
 
 
-.formula {
+.destaque {
+    margin: 28px 0;
+    padding: 20px 24px;
 
-    border: 1px solid var(--border);
-
-    border-left: 3px solid var(--primary);
-
+    background: #f7f8fc;
+    border: 1px solid #e1e4ee;
+    border-left: 4px solid var(--primary);
     border-radius: 0 10px 10px 0;
-
-    padding: 18px 22px;
-
-    margin-bottom: 28px;
-
-    background: var(--bg);
-
 }
 
-
-.formula strong {
-
+.destaque .label {
     display: block;
+    margin-bottom: 10px;
 
-    font-size: 20px;
-
-    margin-top: 5px;
-
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+.destaque p {
+    margin: 0;
+
+    color: #17213a;
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.formula {
+    border: 1px solid #f8c08f;
+    border-left: 4px solid #e6a709;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    background: #fff8df;
+    box-shadow: 0 3px 8px rgba(120, 90, 20, 0.08);
+}
+
+.formula .label {
+    display: none;
+    margin-bottom: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    color: #98751b;
+}
+
+.formula-conteudo {
+    padding: 14px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.formula-conteudo strong {
+    font-size: 18px;
+    font-family: "Cambria Math", "Times New Roman", serif;
+    font-weight: 700;
+    color: #0d0d0d;
+}
 
 .example {
 

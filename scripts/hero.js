@@ -13,6 +13,8 @@ qtdModulos.innerText = modulos.length;
 const qtdQuestoes = document.getElementById("qtd-questoes");
 qtdQuestoes.innerText = questoes.length - 10 + "+";
 
+const topicos = document.querySelector(".topics");
+topicos.innerHTML = "";
 
 let i = 0;
 for (const modulo of modulos) {
@@ -91,5 +93,24 @@ for (const modulo of modulos) {
     `;
 
     listaModulos.appendChild(card);
+
+    
+    let iEtapa = 0;
+
+    for (const etapa of etapas){
+        if(iEtapa===5)
+            break;
+        const topico = document.createElement("a");
+        topico.classList.add("topic");
+        topico.href = `aula.html?id=${modulo.id}&idet=${etapa.id}`;
+        topico.innerHTML = 
+        `
+            <span class="topic-dot ${modulo.cor}-bg"></span>
+            ${etapa.titulo}
+        `
+        topicos.appendChild(topico);
+        iEtapa++;
+    };
+
     i++;
 }

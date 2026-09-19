@@ -9,7 +9,7 @@ async function verificarLogin() {
         return;
     }
 
-    console.log("Usuário conectado:", data.user.email);
+    // console.log("Usuário conectado:", data.user.email);
 }
 
 verificarLogin();

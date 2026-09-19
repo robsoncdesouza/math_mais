@@ -15,6 +15,7 @@ import {
 
 const params = new URLSearchParams(window.location.search);
 const idModulo = params.get("id");
+const idEtapa = params.get("idet");
 
 const sidebar = document.querySelector(".lesson-sidebar");
 const painel = document.querySelector('[data-tab-panel="0"]');
@@ -320,16 +321,16 @@ function criarConteudo(conteudo) {
 
         const destaque = document.createElement("div");
 
-        destaque.classList.add("formula");
+        destaque.classList.add("destaque");
 
         destaque.innerHTML = `
             <span class="label">
                 Destaque
             </span>
 
-            <strong>
+            <p>
                 ${conteudo.texto}
-            </strong>
+            </p>
         `;
 
         return destaque;
@@ -342,22 +343,20 @@ function criarConteudo(conteudo) {
 
     if (conteudo.tipo === "formula") {
 
-        const formula = document.createElement("div");
+    const formula = document.createElement("div");
 
-        formula.classList.add("formula");
+    formula.classList.add("formula");
 
-        formula.innerHTML = `
-            <span class="label">
-                Fórmula
-            </span>
+    formula.innerHTML = `
+        <span class="label">Fórmula</span>
 
-            <strong>
-                ${conteudo.texto}
-            </strong>
-        `;
+        <div class="formula-conteudo">
+            <strong>${conteudo.texto}</strong>
+        </div>
+    `;
 
-        return formula;
-    }
+    return formula;
+}
 
 
     // ------------------------------------
@@ -457,7 +456,12 @@ function criarTabela(dados) {
 // ========================================
 // INICIA NA PRIMEIRA ETAPA
 // ========================================
-
-if (etapas.length > 0) {
+if(idEtapa){
+    console.log(idEtapa);
+    const etapaUrl = etapas.find(et => et.id == idEtapa);
+    if(etapaUrl) carregarEtapa(etapaUrl);
+    else carregarEtapa(etapas[0]);
+}
+else if (etapas.length > 0) {
     carregarEtapa(etapas[0]);
 }
