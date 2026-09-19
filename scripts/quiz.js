@@ -11,13 +11,8 @@ const parametros = new URLSearchParams(window.location.search);
 
 const idQuiz = parametros.get("id");
 
-
 if (!idQuiz) {
-
-    console.error("ID do quiz não encontrado na URL.");
-
-    throw new Error("Quiz não encontrado.");
-
+    window.location.href = "../index.html";
 }
 
 
@@ -67,6 +62,7 @@ let acertos = 0;
 
 let respondeu = false;
 
+let etapaJaConcluida = false;
 
 /* =========================================================
    BUSCA O QUIZ
@@ -83,7 +79,10 @@ async function carregarQuiz() {
 
     if (error) {
 
-        console.error("Erro ao buscar quiz:", error);
+        console.error(
+            "Erro ao buscar quiz:",
+            error
+        );
 
         return;
 
@@ -93,24 +92,85 @@ async function carregarQuiz() {
     quiz = data;
 
 
-    /* Busca as questões desse quiz */
+    /* =====================================================
+       BUSCA O USUÁRIO
+    ===================================================== */
 
-    questoes = await pegarQuestoes(quiz.id);
+    const {
+        data: usuarioData,
+        error: usuarioError
+    } = await supabase.auth.getUser();
 
 
-    if (!questoes || questoes.length === 0) {
+    if (usuarioError || !usuarioData.user) {
 
-        console.error("Esse quiz não possui questões.");
+        console.error(
+            "Usuário não encontrado:",
+            usuarioError
+        );
 
         return;
 
     }
 
 
-    console.log("Quiz:", quiz);
+    const usuarioId =
+        usuarioData.user.id;
 
-    console.log("Questões:", questoes);
 
+    /* =====================================================
+       VERIFICA SE A ETAPA JÁ FOI CONCLUÍDA
+    ===================================================== */
+
+    const {
+        data: progresso,
+        error: progressoError
+    } = await supabase
+        .from("etapas_progresso")
+        .select("concluida")
+        .eq("id_user", usuarioId)
+        .eq("id_etapa", quiz.etapa_id)
+        .maybeSingle();
+
+
+    if (progressoError) {
+
+        console.error(
+            "Erro ao verificar progresso:",
+            progressoError
+        );
+
+        return;
+
+    }
+
+
+    etapaJaConcluida =
+        progresso &&
+        progresso.concluida === true;
+
+
+
+    /* =====================================================
+       BUSCA AS QUESTÕES
+    ===================================================== */
+
+    questoes =
+        await pegarQuestoes(quiz.id);
+
+
+    if (!questoes || questoes.length === 0) {
+
+        console.error(
+            "Esse quiz não possui questões."
+        );
+
+        return;
+
+    }
+
+
+    /* Mostra a primeira questão */
 
     mostrarQuestao();
 
@@ -160,8 +220,21 @@ async function mostrarQuestao() {
 
     /* XP */
 
-    xp.textContent =
-        `◇ ${acertos * 10} XP`;
+    let xpAtual =
+    Math.floor(
+        quiz.xp *
+        (acertos / questoes.length)
+    );
+
+if (etapaJaConcluida) {
+    xpAtual =
+        Math.floor(
+            xpAtual * 0.2
+        );
+}
+
+xp.textContent =
+    `◇ ${xpAtual} XP`;
 
 
     /* Limpa feedback */
@@ -196,11 +269,6 @@ async function mostrarQuestao() {
     const alternativas =
         await pegarAlternativas(questao.id);
 
-
-    console.log(
-        "Alternativas da questão:",
-        alternativas
-    );
 
 
     /* =====================================================
@@ -421,8 +489,21 @@ async function responderQuestao(button) {
         `${acertos} ${acertos === 1 ? "acerto" : "acertos"}`;
 
 
-    xp.textContent =
-        `◇ ${acertos * 10} XP`;
+    let xpAtual =
+    Math.floor(
+        quiz.xp *
+        (acertos / questoes.length)
+    );
+
+if (etapaJaConcluida) {
+    xpAtual =
+        Math.floor(
+            xpAtual * 0.2
+        );
+}
+
+xp.textContent =
+    `◇ ${xpAtual} XP`;
 
 
     /* =====================================================
@@ -549,14 +630,17 @@ nextButton.addEventListener(
 
 async function finalizarQuiz() {
 
-    const usuarioData =
-        await supabase.auth.getUser();
+    const {
+        data: usuarioData,
+        error: usuarioError
+    } = await supabase.auth.getUser();
 
 
-    if (!usuarioData.data.user) {
+    if (usuarioError || !usuarioData.user) {
 
         console.error(
-            "Usuário não está logado."
+            "Usuário não está logado:",
+            usuarioError
         );
 
         return;
@@ -564,43 +648,149 @@ async function finalizarQuiz() {
     }
 
 
-    /* Marca a etapa como concluída */
-
-    const { error } =
-        await supabase
-            .from("etapas_progresso")
-            .upsert(
-                {
-                    id_user:
-                        usuarioData.data.user.id,
-
-                    id_etapa:
-                        quiz.etapa_id,
-
-                    concluida:
-                        true,
-
-                    concluida_em:
-                        new Date().toISOString()
-                },
-                {
-                    onConflict:
-                        "id_user,id_etapa"
-                }
-            );
+    const usuarioId =
+        usuarioData.user.id;
 
 
-    if (error) {
+    /* =====================================================
+       CALCULA O XP
+    ===================================================== */
 
-        console.error(
-            "Erro ao salvar progresso:",
-            error
+    const xpQuiz =
+        quiz.xp;
+
+
+    const porcentagem =
+        acertos / questoes.length;
+
+
+    /* XP proporcional aos acertos */
+
+    let xpGanho =
+        Math.floor(
+            xpQuiz * porcentagem
         );
+
+
+    /*
+     * Se a etapa já foi concluída anteriormente,
+     * o usuário recebe apenas 20% do XP calculado.
+     */
+
+    if (etapaJaConcluida) {
+
+        xpGanho =
+            Math.floor(
+                xpGanho * 0.2
+            );
 
     }
 
 
-    /* Guarda o resultado */
+
+
+    /* =====================================================
+       BUSCA O XP ATUAL
+    ===================================================== */
+
+    const {
+        data: usuario,
+        error: xpBuscaError
+    } = await supabase
+        .from("users")
+        .select("xp")
+        .eq("id", usuarioId)
+        .single();
+
+
+    if (xpBuscaError) {
+
+        console.error(
+            "Erro ao buscar XP:",
+            xpBuscaError
+        );
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       ADICIONA O XP
+    ===================================================== */
+
+    const novoXp =
+        usuario.xp + xpGanho;
+
+
+    const {
+        error: xpError
+    } = await supabase
+        .from("users")
+        .update({
+            xp: novoXp
+        })
+        .eq("id", usuarioId);
+
+
+    if (xpError) {
+
+        console.error(
+            "Erro ao atualizar XP:",
+            xpError
+        );
+
+        return;
+
+    }
+
+
+
+
+
+    /* =====================================================
+       MARCA A ETAPA COMO CONCLUÍDA
+    ===================================================== */
+
+    const {
+        error: progressoError
+    } = await supabase
+        .from("etapas_progresso")
+        .upsert(
+            {
+                id_user: usuarioId,
+
+                id_etapa:
+                    quiz.etapa_id,
+
+                concluida:
+                    true,
+
+                concluida_em:
+                    new Date().toISOString()
+            },
+            {
+                onConflict:
+                    "id_user,id_etapa"
+            }
+        );
+
+
+    if (progressoError) {
+
+        console.error(
+            "Erro ao salvar progresso:",
+            progressoError
+        );
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       GUARDA O RESULTADO
+    ===================================================== */
 
     localStorage.setItem(
         "mathplusScore",
@@ -614,13 +804,20 @@ async function finalizarQuiz() {
     );
 
 
-    /* Vai para o resultado */
+    localStorage.setItem(
+        "mathplusXp",
+        xpGanho
+    );
+
+
+    /* =====================================================
+       VAI PARA O RESULTADO
+    ===================================================== */
 
     window.location.href =
         `resultado.html?id=${idQuiz}`;
 
 }
-
 
 /* =========================================================
    INICIA

@@ -38,7 +38,7 @@ if (total > 0) {
 
 
 const xpGanho =
-    acertos * 10;
+    Number(localStorage.getItem("mathplusXp")) || 0;
 
 
 /* =========================================================
@@ -86,7 +86,6 @@ if (!idQuiz)
     btnRepetir.href = "../conteudos.html";
 else {
     const quizz = (await supabase.from("quizzes").select("etapas(id, modulo_id)").eq("id",idQuiz).single()).data;
-    console.log(quizz);
     
     btnRepetir.href = `../aula.html?id=${quizz.etapas.modulo_id}&idet=${quizz.etapas.id}`;
 }
