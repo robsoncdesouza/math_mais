@@ -2071,6 +2071,8 @@ a {
    ODS
 ========================================================= */
 
+
+
 .ods-hero {
 
     background: var(--text);
@@ -2413,6 +2415,12 @@ a {
 
     background: var(--bg);
 
+}
+
+.agenda{
+    margin-top: 20px;
+    display:block;
+    text-align: center;
 }
 
 

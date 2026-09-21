@@ -200,3 +200,11 @@ function initLesson() {
     });
 
 }
+
+
+
+
+
+function agenda(){
+    window.location.href='https://sdgs.un.org/2030agenda'
+}
