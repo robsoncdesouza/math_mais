@@ -3,6 +3,21 @@ import { supabase } from "./supabase.js";
 import { pegarQuestoes, pegarAlternativas } from "./get.js";
 
 
+function embaralhar(array) {
+
+    const copia = [...array];
+
+    for (let i = copia.length - 1; i > 0; i--) {
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [copia[i], copia[j]] =
+            [copia[j], copia[i]];
+    }
+
+    return copia;
+}
+
 /* =========================================================
    PEGA O QUIZ DA URL
 ========================================================= */
@@ -155,9 +170,8 @@ async function carregarQuiz() {
        BUSCA AS QUESTÕES
     ===================================================== */
 
-    questoes =
-        await pegarQuestoes(quiz.id);
-
+    questoes = await pegarQuestoes(quiz.id);
+    questoes = embaralhar(questoes);
 
     if (!questoes || questoes.length === 0) {
 
@@ -183,8 +197,7 @@ async function carregarQuiz() {
 
 async function mostrarQuestao() {
 
-    const questao =
-        questoes[questaoAtual];
+    const questao = questoes[questaoAtual];
 
 
     respondeu = false;
@@ -266,9 +279,8 @@ xp.textContent =
        BUSCA AS ALTERNATIVAS
     ===================================================== */
 
-    const alternativas =
-        await pegarAlternativas(questao.id);
-
+    let alternativas = await pegarAlternativas(questao.id);
+    alternativas = embaralhar(alternativas);
 
 
     /* =====================================================

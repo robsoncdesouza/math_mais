@@ -13,7 +13,7 @@ export async function pegarUsuario(id) {
 export async function pegarModulos() {
     return (await supabase
         .from("modulos")
-        .select("*")
+        .select("*, etapas(*)")
         .order("ordem")).data;
 }
 
@@ -78,6 +78,62 @@ export async function pegarProgresso(usuarioId) {
         .from("etapas_progresso")
         .select("*")
         .eq("id_user", usuarioId)).data;
+}
+
+export async function pegarProgressoConcluido(userId, modulos) {
+
+    const { data: dados, error } = await supabase
+        .from("etapas_progresso")
+        .select(`
+            id_etapa,
+            etapas (
+                modulo_id,
+                quizzes (
+                    questoes (
+                        id
+                    )
+                )
+            )
+        `)
+        .eq("id_user", userId);
+
+    if (error) {
+        console.error(error);
+        return {
+            modulosConcluidos: 0,
+            questoesConcluidas: 0
+        };
+    }
+
+    let modulosConcluidos = 0;
+    let questoesConcluidas = 0;
+
+    // Conta todas as questões das etapas concluídas
+    dados.forEach(item => {
+
+        const questoes = item.etapas.quizzes.questoes;
+
+        questoesConcluidas += questoes.length;
+    });
+
+    // Verifica quais módulos foram totalmente concluídos
+    modulos.forEach(modulo => {
+
+        const quantidadeEtapas = modulo.etapas.length;
+
+        const etapasConcluidas = dados.filter(item =>
+            item.etapas.modulo_id === modulo.id
+        ).length;
+
+        if (etapasConcluidas === quantidadeEtapas) {
+            modulosConcluidos++;
+        }
+    });
+
+    return {
+        modulosConcluidos,
+        questoesConcluidas
+    };
 }
 
 // pegar todas as questoes de um modulo
