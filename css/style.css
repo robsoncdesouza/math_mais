@@ -1187,7 +1187,7 @@ a {
 
     padding-top: 40px;
 
-    margin: 56px auto 0;
+    margin: 0 auto 56px;
 
     width: min(1100px, calc(100% - 20px));
 
