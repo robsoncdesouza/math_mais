@@ -1,5 +1,6 @@
 import { supabase } from "./supabase.js";
-import { pegarModulos, pegarEtapas, pegarProgresso, pegarQuizzesModulo, pegarQuestoes, pegarQuestoesModulo } from "./get.js";
+import { pegarModulos, pegarEtapas, pegarProgresso, pegarQuizzesModulo, pegarProgressoConcluido } from "./get.js";
+import { pegarNivel, pegarXpDoNivel, pegarPorcentagemXp } from "./xp.js";
 
 const idUser = (await supabase.auth.getUser()).data.user.id;
 const listaModulos = document.getElementById("lista-modulos");
@@ -114,3 +115,19 @@ for (const modulo of modulos) {
 
     i++;
 }
+
+const {modulosConcluidos, questoesConcluidas} = await pegarProgressoConcluido(idUser,modulos)
+
+const xpAtual = (await supabase.from("users").select("xp").eq("id", idUser).maybeSingle()).data.xp;
+const XpDoNivel = pegarXpDoNivel(xpAtual);
+const porcentagemXp =  pegarPorcentagemXp(xpAtual);
+const nivelAtual = pegarNivel(xpAtual);
+
+document.getElementById('next-level').innerText = nivelAtual+1;
+document.getElementById('current-level').innerText = nivelAtual;
+document.getElementById('current-level-span').innerText = nivelAtual;
+document.getElementById('xp-do-nivel').innerText = XpDoNivel;
+document.getElementById('xp-total').innerText = xpAtual;
+document.getElementById('qtd-modulos-concluidos').innerText = modulosConcluidos;
+document.getElementById('qtd-questoes-concluidas').innerText = questoesConcluidas;
+document.getElementById('nivel-progress').style.width = porcentagemXp,"%";
