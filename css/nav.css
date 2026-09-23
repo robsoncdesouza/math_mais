@@ -72,8 +72,7 @@ header.menu-open .menu-toggle span:nth-child(3) {
 .nav-center{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    transition: 0.3s ease-in-out;
+    transform: translateX(-60%);
 }
 
 .nav-center ul{

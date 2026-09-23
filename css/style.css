@@ -61,7 +61,7 @@ body {
 
     line-height: 1.6;
 
-    margin-top: 6%;
+    /* padding-top: 6%; */
 
 }
 
@@ -181,6 +181,16 @@ a {
 
     padding: 88px 24px 72px;
 
+    padding-top: 9%;
+
+    background-color: var(--bg);
+}
+
+@media (max-width:1700px) {
+    .hero{
+
+        padding-top: 12%;
+    }
 }
 
 
@@ -334,7 +344,7 @@ a {
 
 .section.bg {
 
-    background: var(--bg);
+    /* background: var(--bg); */
 
 }
 
@@ -2422,6 +2432,28 @@ a {
     display:block;
     text-align: center;
 }
+
+
+/* =========================================================
+   CONTATO
+========================================================= */
+
+.grid-contact{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 12em;
+}
+
+.img-contact{
+    width: 180px;
+}
+
 
 
 /* =========================================================

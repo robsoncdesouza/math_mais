@@ -25,7 +25,8 @@
             </a>
         </h1>
 
-        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="menu-principal">
             <span></span>
             <span></span>
             <span></span>
@@ -41,10 +42,11 @@
 
         <div class="nav-right" aria-label="Ações rápidas">
             <ul>
-                <li><a href="conteudos.html" class="btn btn-outline btn-lg">Explorar </a></li>
-                <li><a href="forms/resetar-senha.html" class="btn btn-filled btn-lg">Mudar Senha </a></li>
+                <li><a href="conteudos.html" class="btn btn-filled btn-lg">Explorar</a></li>
+                <li><a href="forms/resetar-senha.html" class="btn btn-outline btn-lg">Contato</a></li>
                 <li>
-                    <a href="forms/login.html" class="btn btn-filled btn-icon" data-logout title="Sair da conta" aria-label="Sair da conta">
+                    <a href="forms/login.html" class="btn btn-filled btn-icon" data-logout title="Sair da conta"
+                        aria-label="Sair da conta">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
                 </li>
@@ -126,6 +128,115 @@
 
 
         <div class="divider"></div>
+
+        <!-- ================= PROGRESSO ================= -->
+
+        <section class="section bg">
+
+            <div class="container">
+
+
+                <div>
+
+                    <span class="label">
+                        Sistema de progresso
+                    </span>
+                    <!-- NÍVEL -->
+
+                    <div>
+
+                        <div class="level-box">
+
+                            <div class="level-top">
+
+                                <div>
+
+                                    <small class="uppercase">
+                                        Seu nível atual
+                                    </small>
+
+                                    <h3 class="level-title">
+                                        Nível <span id="current-level-span">7</span>
+                                    </h3>
+
+                                    <p class="muted">
+                                        Explorador Matemático
+                                    </p>
+
+                                </div>
+
+                                <div class="level-number" id="current-level">
+                                    7
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-info level-progress">
+
+                                <span>
+                                    XP para o Nível <span id="next-level">8</span>
+                                </span>
+
+                                <strong class="primary-text">
+                                    <span id="xp-do-nivel">725</span> / 1000
+                                </strong>
+
+                            </div>
+
+                            <div class="progress-line">
+                                <span id="nivel-progress" style="width:72.5%;" class="primary-bg">
+                                </span>
+                            </div>
+
+
+                            <div class="level-stats">
+
+                                <div>
+                                    <strong id="xp-total">725</strong>
+                                    <small>XP total</small>
+                                </div>
+
+                                <div>
+                                    <strong id="qtd-modulos-concluidos">3</strong>
+                                    <small>módulos concluídos</small>
+                                </div>
+
+                                <div>
+                                    <strong id="qtd-questoes-concluidas">48</strong>
+                                    <small>questões concluídas</small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="next-challenge">
+
+                            <div>
+
+                                <small>
+                                    Próximo desafio
+                                </small>
+
+                                <strong>
+                                    Quiz de Porcentagem
+                                </strong>
+
+                            </div>
+
+                            <a href="quiz.html" class="btn btn-light-outline btn-sm">
+                                Iniciar →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+        </section>
 
 
         <!-- ================= MÓDULOS ================= -->
@@ -287,212 +398,6 @@
 
 
         <div class="divider"></div>
-
-
-        <!-- ================= PROGRESSO ================= -->
-
-        <section class="section bg">
-
-            <div class="container two-col">
-
-
-                <div>
-
-                    <span class="label">
-                        Sistema de progresso
-                    </span>
-
-                    <h2>
-                        Ganhe XP a cada<br>
-                        desafio superado
-                    </h2>
-
-                    <p class="section-description">
-                        Complete missões diárias, acerte questões
-                        e suba de nível. Seu progresso é salvo
-                        automaticamente.
-                    </p>
-
-
-                    <div class="challenge-list">
-
-                        <div class="challenge">
-
-                            <div class="challenge-left">
-
-                                <span class="check done">
-                                    ✓
-                                </span>
-
-                                Desafio diário completado
-
-                            </div>
-
-                            <span class="xp">
-                                ◇ 25 XP
-                            </span>
-
-                        </div>
-
-
-                        <div class="challenge">
-
-                            <div class="challenge-left">
-
-                                <span class="check done">
-                                    ✓
-                                </span>
-
-                                Quiz Rápido — 5 questões
-
-                            </div>
-
-                            <span class="xp">
-                                ◇ 50 XP
-                            </span>
-
-                        </div>
-
-
-                        <div class="challenge">
-
-                            <div class="challenge-left">
-
-                                <span class="check">
-                                    □
-                                </span>
-
-                                Completar um módulo inteiro
-
-                            </div>
-
-                            <span class="xp">
-                                ◇ 200 XP
-                            </span>
-
-                        </div>
-
-
-                        <div class="challenge">
-
-                            <div class="challenge-left">
-
-                                <span class="check">
-                                    □
-                                </span>
-
-                                Sequência de 7 dias seguidos
-
-                            </div>
-
-                            <span class="xp">
-                                ◇ 100 XP
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- NÍVEL -->
-
-                <div>
-
-                    <div class="level-box">
-
-                        <div class="level-top">
-
-                            <div>
-
-                                <small class="uppercase">
-                                    Seu nível atual
-                                </small>
-
-                                <h3 class="level-title">
-                                    Nível <span id="current-level-span">7</span>
-                                </h3>
-
-                                <p class="muted">
-                                    Explorador Matemático
-                                </p>
-
-                            </div>
-
-                            <div class="level-number" id="current-level">
-                                7
-                            </div>
-
-                        </div>
-
-
-                        <div class="progress-info level-progress">
-
-                            <span>
-                                XP para o Nível <span id="next-level">8</span>
-                            </span>
-
-                            <strong class="primary-text">
-                                <span id="xp-do-nivel">725</span> / 1000
-                            </strong>
-
-                        </div>
-
-                        <div class="progress-line">
-                            <span id="nivel-progress" style="width:72.5%;" class="primary-bg">
-                            </span>
-                        </div>
-
-
-                        <div class="level-stats">
-
-                            <div>
-                                <strong id="xp-total">725</strong>
-                                <small>XP total</small>
-                            </div>
-
-                            <div>
-                                <strong id="qtd-modulos-concluidos">3</strong>
-                                <small>módulos concluídos</small>
-                            </div>
-                            
-                            <div>
-                                <strong id="qtd-questoes-concluidas">48</strong>
-                                <small>questões concluídas</small>
-                            </div>
-                            
-                        </div>
-
-                    </div>
-
-
-                    <div class="next-challenge">
-
-                        <div>
-
-                            <small>
-                                Próximo desafio
-                            </small>
-
-                            <strong>
-                                Quiz de Porcentagem
-                            </strong>
-
-                        </div>
-
-                        <a href="quiz.html" class="btn btn-light-outline btn-sm">
-                            Iniciar →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
 
         <!-- ================= CTA ================= -->
 
