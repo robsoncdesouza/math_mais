@@ -35,6 +35,15 @@ header {
         margin-left: auto;
     }
 
+    .logo img {
+        width: clamp(118px, 16vw, 150px);
+        max-width: none;
+        height: auto;
+        padding: 0.75rem;
+        box-sizing: border-box;
+        flex-shrink: 0;
+    }
+
     .nav-center,
     .nav-right {
         display: none;
@@ -86,7 +95,10 @@ header {
     }
 
     .logo img {
-        padding: 1.5rem;
+        width: clamp(128px, 26vw, 152px);
+        max-width: none;
+        padding: 0.8rem;
+        flex-shrink: 0;
     }
 
     .nav-center ul,
