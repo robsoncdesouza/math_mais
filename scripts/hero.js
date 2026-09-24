@@ -131,3 +131,32 @@ document.getElementById('xp-total').innerText = xpAtual;
 document.getElementById('qtd-modulos-concluidos').innerText = modulosConcluidos;
 document.getElementById('qtd-questoes-concluidas').innerText = questoesConcluidas;
 document.getElementById('nivel-progress').style.width = porcentagemXp,"%";
+
+function pegarEtapaNaoConcluida(modulos, etapas, etapasProgresso) {
+    const modulosEmbaralhados = [...modulos]
+        .sort(() => Math.random() - 0.5);
+
+    for (const modulo of modulosEmbaralhados) {
+        const etapasDoModulo = etapas
+            .filter(etapa => etapa.modulo_id === modulo.id)
+            .sort(() => Math.random() - 0.5);
+
+        for (const etapa of etapasDoModulo) {
+            const concluida = etapasProgresso.some(
+                progresso => progresso.id_etapa === etapa.id
+            );
+
+            if (!concluida) {
+                return etapa;
+            }
+        }
+    }
+
+    return null;
+}
+
+const desafio = pegarEtapaNaoConcluida(modulos, (await supabase.from("etapas").select("*")).data, todasEtapasConcluidas)
+console.log(desafio);
+
+document.getElementById('next-etapa').innerText = `${modulos.find(mod => mod.id == desafio.modulo_id).titulo} — ${desafio.titulo}`
+document.getElementById('next-etapa-link').href = `./aula.html?id=${desafio.modulo_id}&idet=${desafio.id}`
