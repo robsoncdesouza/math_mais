@@ -155,8 +155,7 @@ function pegarEtapaNaoConcluida(modulos, etapas, etapasProgresso) {
     return null;
 }
 
-const desafio = pegarEtapaNaoConcluida(modulos, (await supabase.from("etapas").select("*")).data, todasEtapasConcluidas)
-console.log(desafio);
+const desafio = pegarEtapaNaoConcluida(modulos, (await supabase.from("etapas").select("*")).data, todasEtapasConcluidas);
 
 document.getElementById('next-etapa').innerText = `${modulos.find(mod => mod.id == desafio.modulo_id).titulo} — ${desafio.titulo}`
 document.getElementById('next-etapa-link').href = `./aula.html?id=${desafio.modulo_id}&idet=${desafio.id}`

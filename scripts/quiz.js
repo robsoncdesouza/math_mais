@@ -61,7 +61,7 @@ const xp =
 
 const steps =
     document.querySelectorAll(".quiz-step");
-
+const moduloQuest = document.getElementById("mod-quest");
 
 /* =========================================================
    VARIÁVEIS DO QUIZ
@@ -220,10 +220,12 @@ async function mostrarQuestao() {
     if (questionLabel) {
 
         questionLabel.textContent =
-            `Quiz · Questão ${questaoAtual + 1}`;
-
+        `Quiz · Questão ${questaoAtual + 1}`;
     }
-
+    
+    /* Módulo e questão */
+    const modulo = (await supabase.from("modulos").select("*").eq("id", (await supabase.from("etapas").select("*").eq("id", quiz.etapa_id).single()).data.modulo_id).single()).data.titulo;
+    moduloQuest.innerText = `${modulo} · Questão ${questaoAtual + 1}`;
 
     /* Pontuação */
 
