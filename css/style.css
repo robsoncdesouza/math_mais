@@ -63,7 +63,7 @@ body {
 
 }
 
-.conteudos-body, .quiz-body, .aula-body, .index-body{
+.conteudos-body, .quiz-body, .aula-body, .index-body, .resultado-body{
     /* padding-top: 6%; */
     margin-top: 8em;
 }
